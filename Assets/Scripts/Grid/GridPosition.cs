@@ -1,8 +1,8 @@
 
 public struct GridPosition
 {
-    int x;
-    int z;
+    public int x;
+    public int z;
 
     public GridPosition(int x, int z)
     {

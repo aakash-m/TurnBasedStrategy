@@ -829,6 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3b866aa69ad794aacc9d26c7f1ec92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridObjectPrefab: {fileID: 7341662786482446781, guid: 169156487c476c541b262b8975b5af67,
+    type: 3}
 --- !u!114 &1710272277 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3791426048302204096, guid: 131d28aa179656e47b6c9a384d75b401,

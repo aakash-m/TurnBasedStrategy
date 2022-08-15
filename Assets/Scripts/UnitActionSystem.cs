@@ -12,8 +12,13 @@ public class UnitActionSystem : MonoBehaviour
     [SerializeField] LayerMask unitLayerMask;
     [SerializeField] Unit selectedUnit;
 
+    private bool isBusy;
+
+
     private void Awake()
     {
+        if (isBusy) return;
+
         if(Instance != null)
         {
             Debug.LogError("There is more than one UnitActionSystem! " + transform + " - " + Instance);
@@ -35,15 +40,27 @@ public class UnitActionSystem : MonoBehaviour
 
             if (selectedUnit.GetMoveAction().IsValidActionGridPosition(mouseGridPosition))
             {
-                selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition());
+                SetBusy();
+                selectedUnit.GetMoveAction().Move(MouseWorld.GetPosition(), ClearBusy);
             }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            selectedUnit.GetSpinAction().Spin();
+            SetBusy();
+            selectedUnit.GetSpinAction().Spin(ClearBusy);
         }
 
+    }
+
+    private void SetBusy()
+    {
+        isBusy = true;
+    }
+
+    private void ClearBusy()
+    {
+        isBusy = false;
     }
 
     private bool TryHandleUnitSelection()

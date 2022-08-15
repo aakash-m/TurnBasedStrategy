@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,14 +34,16 @@ public class MoveAction : BaseAction
         {
             unitAnimator.SetBool("IsWalking", false);
             isActive = false;
+            onActionComplete();
         }
 
         float rotateSpeed = 10f;
         transform.forward = Vector3.Lerp(transform.forward, moveDirection, rotateSpeed * Time.deltaTime);
     }
 
-    public void Move(Vector3 targetPosition)
+    public void Move(Vector3 targetPosition, Action onActionComplete)
     {
+        this.onActionComplete = onActionComplete;
         this.targetPosition = targetPosition;
         isActive = true;
     }

@@ -41,10 +41,10 @@ public class MoveAction : BaseAction
         transform.forward = Vector3.Lerp(transform.forward, moveDirection, rotateSpeed * Time.deltaTime);
     }
 
-    public void Move(Vector3 targetPosition, Action onActionComplete)
+    public void Move(GridPosition targetPosition, Action onActionComplete)
     {
         this.onActionComplete = onActionComplete;
-        this.targetPosition = targetPosition;
+        this.targetPosition = LevelGrid.Instance.GetWorldPosition(targetPosition);
         isActive = true;
     }
 

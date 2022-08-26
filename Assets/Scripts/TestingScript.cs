@@ -13,11 +13,11 @@ public class TestingScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            GridSystemVisuals.Instance.HideAllGridPosition();
-           // GridSystemVisuals.Instance.ShowGridPositionList(unit.GetMoveAction().GetValidGridPositionList()); 
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    GridSystemVisuals.Instance.HideAllGridPosition();
+        //    GridSystemVisuals.Instance.ShowGridPositionList(unit.GetMoveAction().GetValidGridPositionList()); 
+        //}
     }
 
 }

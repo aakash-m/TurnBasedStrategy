@@ -14,11 +14,23 @@ public abstract class BaseAction : MonoBehaviour
         unit = GetComponent<Unit>();
     }
 
-    public abstract string GetActionName();
+    protected void ActionStart(Action onActionComplete)
+    {
+        isActive = true;
+        this.onActionComplete = onActionComplete;
+    }
+
+    protected void ActionComplete()
+    {
+        isActive = false;
+        onActionComplete();
+    }
 
     public abstract void TakeAction(GridPosition gridPosition, Action onActionComplete);
 
     public abstract List<GridPosition> GetValidActionGridPositionList();
+
+    public abstract string GetActionName();
 
     public virtual bool IsValidactionGridPosition(GridPosition gridPosition)
     {

@@ -1432,6 +1432,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c340e57e3a3bf045beb9e4bfd772dd0, type: 3}
+--- !u!95 &775715326 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3877285141605635429, guid: 131d28aa179656e47b6c9a384d75b401,
+    type: 3}
+  m_PrefabInstance: {fileID: 3791426048898886613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,6 +2729,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6218062947195445009, guid: 131d28aa179656e47b6c9a384d75b401,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 775715326}
     - target: {fileID: 189973020261733868, guid: 131d28aa179656e47b6c9a384d75b401,
         type: 3}
       propertyPath: maxMove

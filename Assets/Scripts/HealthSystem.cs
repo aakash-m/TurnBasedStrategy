@@ -7,8 +7,16 @@ public class HealthSystem : MonoBehaviour
 {
 
     public event EventHandler OnDead;
+    public event EventHandler OnDamaged;
 
     [SerializeField] int health = 100;
+
+    private int healthMax;
+
+    private void Awake()
+    {
+        healthMax = health;
+    }
 
     public void Damage(int damageAmount)
     {
@@ -18,6 +26,8 @@ public class HealthSystem : MonoBehaviour
         {
             health = 0;
         }
+
+        OnDamaged?.Invoke(this, EventArgs.Empty);
 
         if (health == 0)
         {
@@ -34,5 +44,9 @@ public class HealthSystem : MonoBehaviour
         OnDead?.Invoke(this, EventArgs.Empty);
     }
 
+    public float GetHealthNormalized()
+    {
+        return (float)health / healthMax;
+    }
 
 }

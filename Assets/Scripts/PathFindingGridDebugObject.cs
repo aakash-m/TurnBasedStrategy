@@ -9,6 +9,7 @@ public class PathFindingGridDebugObject : GridDebugObject
     [SerializeField] TextMeshPro gCostText;
     [SerializeField] TextMeshPro hCostText;
     [SerializeField] TextMeshPro fCostText;
+    [SerializeField] SpriteRenderer isWalkableSpriteRenderer;
 
     private PathNode pathNode;
     public override void SetGridObject(object gridObject)
@@ -23,6 +24,7 @@ public class PathFindingGridDebugObject : GridDebugObject
         gCostText.text = pathNode.GetGCost().ToString();
         hCostText.text = pathNode.GetHCost().ToString();
         fCostText.text = pathNode.GetFCost().ToString();
+        isWalkableSpriteRenderer.color = pathNode.GetIsWalkable() ? Color.green : Color.red;
     }
 
 

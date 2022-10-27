@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4905882015729543048}
   - component: {fileID: 4905882015729543063}
   m_Layer: 8
-  m_Name: Crate
+  m_Name: CrateDestroyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566ab37eea2b5874189bbbbb7df18a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crateDestroyedPrefab: {fileID: 4905882015729543049, guid: b2dc64551536f574bade2dbe21ff1627,
-    type: 3}
+  crateDestroyedPrefab: {fileID: 4905882015729543049}
 --- !u!1001 &4905882016097457642
 PrefabInstance:
   m_ObjectHideFlags: 0

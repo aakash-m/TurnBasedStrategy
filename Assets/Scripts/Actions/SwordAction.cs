@@ -89,9 +89,9 @@ public class SwordAction : BaseAction
         List<GridPosition> validGridPositionList = new List<GridPosition>();
         GridPosition unitGridPosition = unit.GetGridPosition();
 
-        for (int x = -maxSwordDistance; x < maxSwordDistance; x++)
+        for (int x = -maxSwordDistance; x <= maxSwordDistance; x++)
         {
-            for (int z = -maxSwordDistance; z < maxSwordDistance; z++)
+            for (int z = -maxSwordDistance; z <= maxSwordDistance; z++)
             {
                 GridPosition offsetGridPosition = new GridPosition(x, z);
                 GridPosition testGridPosition = unitGridPosition + offsetGridPosition;

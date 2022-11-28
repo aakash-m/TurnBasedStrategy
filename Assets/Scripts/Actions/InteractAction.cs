@@ -32,9 +32,9 @@ public class InteractAction : BaseAction
         List<GridPosition> validGridPositionList = new List<GridPosition>();
         GridPosition unitGridPosition = unit.GetGridPosition();
 
-        for (int x = -maxInteractDistance; x < maxInteractDistance; x++)
+        for (int x = -maxInteractDistance; x <= maxInteractDistance; x++)
         {
-            for (int z = -maxInteractDistance; z < maxInteractDistance; z++)
+            for (int z = -maxInteractDistance; z <= maxInteractDistance; z++)
             {
                 GridPosition offsetGridPosition = new GridPosition(x, z);
                 GridPosition testGridPosition = unitGridPosition + offsetGridPosition;

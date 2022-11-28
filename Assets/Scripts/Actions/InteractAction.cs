@@ -44,10 +44,10 @@ public class InteractAction : BaseAction
                     continue;
                 }
 
-                Door door = LevelGrid.Instance.GetDootAtGridPosition(testGridPosition);
-                if (door == null)
+                IInteractable interactable = LevelGrid.Instance.GetInteractableAtGridPosition(testGridPosition);
+                if (interactable == null)
                 {
-                    //No door on this grid position
+                    //No interactable on this grid position
                     continue;
                 }
 
@@ -59,8 +59,8 @@ public class InteractAction : BaseAction
 
     public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
     {
-        Door door = LevelGrid.Instance.GetDootAtGridPosition(gridPosition);
-        door.Interact(OnInteractComplete);
+        IInteractable interactableDoor = LevelGrid.Instance.GetInteractableAtGridPosition(gridPosition);
+        interactableDoor.Interact(OnInteractComplete);
         Debug.Log("InteractAction");
         ActionStart(onActionComplete);
     }
